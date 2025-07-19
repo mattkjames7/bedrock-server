@@ -1,0 +1,5 @@
+.env
+data/worlds
+data/allowlist.json
+data/permissions.json
+data/server.properties
