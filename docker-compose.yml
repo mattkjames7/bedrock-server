@@ -1,0 +1,17 @@
+services:
+  bds:
+    image: itzg/minecraft-bedrock-server:latest
+    pull_policy: always 
+    container_name: mc-bedrock
+    environment:
+      - EULA=TRUE
+      - ALLOW_LIST=true
+      - LEVEL_NAME="${LEVEL_NAME:-MyWorld}"
+    ports:
+      - "19132:19132/udp"
+    volumes:
+      - ./data/allowlist.json:/data/allowlist.json
+      - ./data/server.properties:/data/server.properties
+      - ./data/permissions.json:/data/permissions.json
+      - ./data/worlds/:/data/worlds/
+
